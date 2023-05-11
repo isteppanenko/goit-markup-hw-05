@@ -172,16 +172,21 @@ img {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--text-color-links);
+  color: #404bbf;
+  /* color: var(--text-color-links); */
 
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.header-nav-link:hover,
+.header-nav-link:focus {
+  color: var(--hover-color-text-link);
+}
 .header-nav-link::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
 
   display: block;
@@ -201,10 +206,6 @@ img {
 .header-nav-link:hover::after,
 .header-nav-link:active::after {
   transform: scaleX(1);
-}
-.header-nav-link:hover,
-.header-nav-link:focus {
-  color: var(--hover-color-text-link);
 }
 
 /* CONTACTS */
@@ -226,7 +227,7 @@ img {
   color: var(--primary-color);
 
   transition-property: color;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -306,7 +307,7 @@ img {
   border-radius: 4px;
 
   transition-property: background-color;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -369,7 +370,7 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
 
   transition-property: background fill;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-icon:hover,
@@ -555,7 +556,7 @@ img {
   fill: var(--icon-fill-color);
 
   transition-property: background-color;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-links .icon-link:hover,
@@ -599,7 +600,7 @@ img {
   color: var(--fill-customers-color);
 
   transition-property: color border-color;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customer-list .customers-link:hover,
@@ -703,7 +704,7 @@ img {
   fill: var(--icon-fill-color);
 
   transition-property: background-color;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 

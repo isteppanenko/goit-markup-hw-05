@@ -20,7 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-
+    <!-- CSS STYLE -->
     <link rel="stylesheet" href="./css/styles.css" />
     <title>WebStudio</title>
   </head>
@@ -72,7 +72,18 @@
       <section class="hero section">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="hero-btn" type="button">Order Service</button>
+          <button class="hero-btn" type="button" data-modal-open>
+            Order Service
+          </button>
+        </div>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button data-modal-close class="close-icon">
+              <svg class="modal-close-icon" width="8" height="8">
+                <use href="./images/icons.svg#close"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -443,5 +454,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

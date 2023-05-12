@@ -328,10 +328,12 @@ img {
 
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 .backdrop.is-hidden.modal {
   transform: scale(0.9) translate(-50%, -50%);
@@ -344,7 +346,7 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   width: 408px;
-  height: 576px;
+  min-height: 576px;
 
   background-color: var(--modal-window-bg);
 
@@ -360,16 +362,20 @@ img {
   top: 24px;
   right: 24px;
 
+  cursor: pointer;
+
+  padding: 0;
+
   width: 24px;
   height: 24px;
 
   border-radius: 50%;
 
-  background: var(--modal-close-icon-bg);
+  background-color: var(--modal-close-icon-bg);
 
   border: 1px solid rgba(0, 0, 0, 0.1);
-
-  transition-property: background fill;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: backgroud-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -377,8 +383,10 @@ img {
 .close-icon:focus {
   background: var(--fill-customers-hover);
   fill: var(--hover-portfolio-btm-color);
+  border: none;
 }
 .modal-close-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /**
@@ -599,7 +607,10 @@ img {
 
   color: var(--fill-customers-color);
 
-  transition-property: color border-color;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -752,7 +763,9 @@ img {
   border: none;
   border: 1px solid var(--portfolio-border-color);
 
-  transition-property: background-color color;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -781,10 +794,10 @@ img {
 
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.item-link:hover .item-list,
-.item-link:focus .item-list {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+.item-list .item-link {
+  outline: 5px solid red;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .text-list {
@@ -808,16 +821,10 @@ img {
   width: 100%;
   height: 100%;
 
-  background-color: var(--overlay-img-portfolio-bg);
-
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transform: scaleY(0%);
-  transform-origin: bottom;
 }
-.item-link:hover .overlay,
-.item-link:focus .overlay {
-  transform: scaleY(100%);
-}
+
 .overlay-text {
   position: absolute;
   top: 0;
@@ -833,16 +840,17 @@ img {
   letter-spacing: 0.02em;
 
   color: var(--overlay-text-color);
+  background-color: var(--overlay-img-portfolio-bg);
 
-  transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+  transform-origin: bottom;
 }
 .item-link:hover .overlay-text,
 .item-link:focus .overlay-text {
   transform: translateY(0%);
 }
-.main-list .item-link:hover {
-}
+
 .item-shadow {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
